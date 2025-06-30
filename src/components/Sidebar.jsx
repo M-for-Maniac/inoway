@@ -27,11 +27,21 @@ function Sidebar() {
     i18n.changeLanguage(lang).then(() => {
       console.log("Language changed to:", lang);
       const searchParams = new URLSearchParams();
-      searchParams.set("lng", lang); // Only set lng, no duplicates
-      navigate(`${location.pathname}?${searchParams.toString()}`);
+      searchParams.set("lng", lang);
+      navigate(`${location.pathname}?${searchParams.toString()}`, { replace: true });
       setIsOpen(false);
     });
   }, 300);
+
+  // Sync language from URL on initial load
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const lng = searchParams.get("lng") || localStorage.getItem("language") || "en";
+    if (lng !== i18n.language) {
+      console.log("Syncing language from URL:", lng);
+      i18n.changeLanguage(lng);
+    }
+  }, [location.search, i18n]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,7 +75,7 @@ function Sidebar() {
             ].map((item) => (
               <NavLink
                 key={item.to}
-                to={item.to}
+                to={`${item.to}?lng=${i18n.language}`}
                 className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                 onClick={() => setIsOpen(false)}
                 aria-current={({ isActive }) => (isActive ? "page" : undefined)}
