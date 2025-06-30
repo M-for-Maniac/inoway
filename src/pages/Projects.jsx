@@ -14,6 +14,7 @@ function Projects() {
   const projectsPerPage = 6;
 
   const fetchProjects = () => {
+    console.log("Fetching projects:", { page, language: i18n.language });
     setIsLoading(true);
     const startIndex = page * projectsPerPage;
     const newProjects = projectsData.slice(startIndex, startIndex + projectsPerPage).map((proj) => ({
@@ -23,7 +24,11 @@ function Projects() {
       images: proj.images || [proj.image],
       description: t(proj.descKey),
     }));
-    setProjects((prev) => [...prev, ...newProjects]);
+    setProjects((prev) => {
+      const updated = [...prev, ...newProjects];
+      console.log("Updated projects:", updated);
+      return updated;
+    });
     setPage((p) => p + 1);
     setIsLoading(false);
     if (startIndex + newProjects.length >= projectsData.length) {
@@ -37,7 +42,7 @@ function Projects() {
     setHasMore(true);
     setIsLoading(true);
     fetchProjects();
-  }, [i18n.language, t]);
+  }, [i18n.language]); // Add i18n.language dependency
 
   return (
     <div className="max-w-5xl mx-auto w-full">
@@ -53,9 +58,13 @@ function Projects() {
           loader={<h4 className="text-center text-[#4A5568] text-sm mt-4">We keep up the MAGIC</h4>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            {projects.length === 0 && !isLoading ? (
+              <p className="text-center text-[#4A5568] text-sm">No projects available</p>
+            ) : (
+              projects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))
+            )}
           </div>
         </InfiniteScroll>
       )}

@@ -6,12 +6,17 @@ function ProjectCard({ project }) {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const openModal = () => setIsModalOpen(true);
+
   return (
     <>
       <div
-        className="card"
+        className="card bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-300"
         role="button"
+        tabIndex={0}
         aria-label={t("modal.viewDetails", { name: project.title })}
+        onClick={openModal}
+        onKeyDown={(e) => e.key === "Enter" && openModal()}
       >
         <img
           src={project.image || '/assets/images/placeholder.jpg'}
@@ -26,9 +31,9 @@ function ProjectCard({ project }) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setIsModalOpen(true);
+              openModal();
             }}
-            className="read-more"
+            className="read-more text-[#007BFF] hover:text-[#FFA500]"
             aria-label={t("projects.readMore")}
           >
             {t("projects.readMore")}

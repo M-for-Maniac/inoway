@@ -21,10 +21,10 @@ function ProjectModal({ isOpen, onClose, project }) {
       aria={{ labelledby: "modal-title", describedby: "modal-description" }}
     >
       <div className="modal-content" dir={isRtl ? "rtl" : "ltr"}>
-        <h2 id="modal-title" className="text-xl font-bold text-[#007BFF]">{project.title}</h2>
+        <h2 id="modal-title" className="text-xl font-bold text-[#007BFF]">{t(project.titleKey)}</h2>
         <img
           src={mainImage}
-          alt={project.title}
+          alt={t(project.titleKey)}
           loading="lazy"
           onError={(e) => (e.target.src = '/assets/images/placeholder.jpg')}
         />
@@ -34,7 +34,7 @@ function ProjectModal({ isOpen, onClose, project }) {
               <img
                 key={index}
                 src={image}
-                alt={`${project.title} thumbnail ${index + 1}`}
+                alt={`${t(project.titleKey)} thumbnail ${index + 1}`}
                 className="modal-thumbnail border-2 border-transparent hover:border-[#FFA500] data-[active=true]:border-[#007BFF]"
                 data-active={mainImage === image}
                 onClick={() => setMainImage(image)}
@@ -44,7 +44,7 @@ function ProjectModal({ isOpen, onClose, project }) {
             ))}
           </div>
         )}
-        <p id="modal-description" className="text-[#4A5568]">{project.description}</p>
+        <p id="modal-description" className="text-[#4A5568]">{t(project.descKey)}</p>
         <button
           onClick={onClose}
           className="bg-[#007BFF] text-white rounded-full hover:bg-[#FFA500] text-sm font-medium transition-colors duration-200"

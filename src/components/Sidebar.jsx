@@ -1,21 +1,38 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+
+// Custom debounce function
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
 
 function Sidebar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  const changeLanguage = (lang) => {
-    localStorage.setItem("language", lang); // Set default language
+  const changeLanguage = debounce((lang) => {
+    localStorage.setItem("language", lang);
     i18n.changeLanguage(lang).then(() => {
       console.log("Language changed to:", lang);
+      const searchParams = new URLSearchParams(location.search);
+      searchParams.set("lng", lang);
+      navigate(`${location.pathname}?${searchParams.toString()}`);
       setIsOpen(false);
-      window.location.reload(); // Reload page to apply language
     });
-  };
+  }, 300);
 
   useEffect(() => {
     const handleResize = () => {

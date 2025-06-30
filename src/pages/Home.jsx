@@ -44,8 +44,9 @@ function Home() {
     setPage(0);
     setHasMore(true);
     setIsLoading(true);
+    setExpandedStandard(null); // Reset expanded standard on language change
     fetchProjects();
-  }, []);
+  }, [i18n.language]); // Add i18n.language dependency
 
   const standards = [
     {
@@ -127,6 +128,10 @@ function Home() {
               key={standard.id}
               className="standard-card bg-white rounded-xl shadow-md p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               onClick={() => toggleStandard(standard.id)}
+              role="button"
+              tabIndex={0}
+              aria-label={t("modal.viewDetails", { name: standard.title })}
+              onKeyDown={(e) => e.key === "Enter" && toggleStandard(standard.id)}
             >
               <h3 className="text-xl font-semibold text-[#2D3748] mb-2">{standard.title}</h3>
               <p className="text-[#2D3748] text-sm mb-4">{standard.standard}</p>
@@ -144,18 +149,19 @@ function Home() {
 
       <section className="projects-section">
         <h2 className="text-3xl font-semibold text-[#2D3748] text-center">{t("home.featuredProjects")}</h2>
-        {isLoading ? (
-          <p className="text-center text-[#fafafa] text-sm">Loading projects...</p>
+        {isLoading && projects.length === 0 ? (
+          <p className="text-center text-[#4A5568] text-sm">Loading projects...</p>
         ) : (
           <InfiniteScroll
             dataLength={projects.length}
             next={fetchProjects}
             hasMore={hasMore}
-            loader={<p className="text-center text-[#fafafa] text-sm mt-6">Loading...</p>}
+            loader={<p className="text-center text-[#4A5568] text-sm mt-6">Loading...</p>}
+            key={i18n.language} // Force remount on language change
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.length === 0 && !isLoading ? (
-                <p className="text-center text-[#fafafa] text-sm">No projects available</p>
+                <p className="text-center text-[#4A5568] text-sm">No projects available</p>
               ) : (
                 projects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
