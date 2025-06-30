@@ -14,7 +14,7 @@ function Projects() {
   const projectsPerPage = 6;
 
   const fetchProjects = () => {
-    console.log("Fetching projects:", { page, language: i18n.language });
+    console.log("fetchProjects called:", { page, language: i18n.language, isInitialized: i18n.isInitialized });
     setIsLoading(true);
     const startIndex = page * projectsPerPage;
     const newProjects = projectsData.slice(startIndex, startIndex + projectsPerPage).map((proj) => ({
@@ -24,6 +24,7 @@ function Projects() {
       images: proj.images || [proj.image],
       description: t(proj.descKey),
     }));
+    console.log("New projects fetched:", newProjects);
     setProjects((prev) => {
       const updated = [...prev, ...newProjects];
       console.log("Updated projects:", updated);
@@ -32,17 +33,21 @@ function Projects() {
     setPage((p) => p + 1);
     setIsLoading(false);
     if (startIndex + newProjects.length >= projectsData.length) {
+      console.log("No more projects to fetch, total:", projectsData.length);
       setHasMore(false);
     }
   };
 
   useEffect(() => {
-    setProjects([]);
-    setPage(0);
-    setHasMore(true);
-    setIsLoading(true);
-    fetchProjects();
-  }, [i18n.language]); // Add i18n.language dependency
+    console.log("Projects useEffect triggered:", { language: i18n.language, isInitialized: i18n.isInitialized });
+    if (i18n.isInitialized) {
+      setProjects([]);
+      setPage(0);
+      setHasMore(true);
+      setIsLoading(true);
+      fetchProjects();
+    }
+  }, [i18n.language, i18n.isInitialized]);
 
   return (
     <div className="max-w-5xl mx-auto w-full">
@@ -51,7 +56,7 @@ function Projects() {
         <p className="text-center text-[#4A5568] text-sm">Loading projects...</p>
       ) : (
         <InfiniteScroll
-          key={i18n.language} // Force remount on language change
+          key={i18n.language}
           dataLength={projects.length}
           next={fetchProjects}
           hasMore={hasMore}

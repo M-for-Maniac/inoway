@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 
-// Custom debounce function
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {

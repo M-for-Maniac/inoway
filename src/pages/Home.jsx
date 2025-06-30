@@ -16,7 +16,7 @@ function Home() {
   const projectsPerPage = 3;
 
   const fetchProjects = () => {
-    console.log("Fetching projects:", { page, language: i18n.language });
+    console.log("fetchProjects called:", { page, language: i18n.language, isInitialized: i18n.isInitialized });
     setIsLoading(true);
     const startIndex = page * projectsPerPage;
     const newProjects = projectsData.slice(startIndex, startIndex + projectsPerPage).map((proj) => ({
@@ -26,6 +26,7 @@ function Home() {
       images: proj.images || [proj.image],
       description: t(proj.descKey),
     }));
+    console.log("New projects fetched:", newProjects);
     setProjects((prev) => {
       const updated = [...prev, ...newProjects];
       console.log("Updated projects:", updated);
@@ -34,19 +35,22 @@ function Home() {
     setPage((p) => p + 1);
     setIsLoading(false);
     if (startIndex + newProjects.length >= projectsData.length) {
+      console.log("No more projects to fetch, total:", projectsData.length);
       setHasMore(false);
     }
   };
 
   useEffect(() => {
-    console.log("Home render:", { language: i18n.language, isInitialized: i18n.isInitialized });
-    setProjects([]);
-    setPage(0);
-    setHasMore(true);
-    setIsLoading(true);
-    setExpandedStandard(null); // Reset expanded standard on language change
-    fetchProjects();
-  }, [i18n.language]); // Add i18n.language dependency
+    console.log("Home useEffect triggered:", { language: i18n.language, isInitialized: i18n.isInitialized });
+    if (i18n.isInitialized) {
+      setProjects([]);
+      setPage(0);
+      setHasMore(true);
+      setIsLoading(true);
+      setExpandedStandard(null);
+      fetchProjects();
+    }
+  }, [i18n.language, i18n.isInitialized]);
 
   const standards = [
     {
@@ -157,7 +161,7 @@ function Home() {
             next={fetchProjects}
             hasMore={hasMore}
             loader={<p className="text-center text-[#4A5568] text-sm mt-6">Loading...</p>}
-            key={i18n.language} // Force remount on language change
+            key={i18n.language}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.length === 0 && !isLoading ? (
