@@ -26,8 +26,8 @@ function Sidebar() {
     localStorage.setItem("language", lang);
     i18n.changeLanguage(lang).then(() => {
       console.log("Language changed to:", lang);
-      const searchParams = new URLSearchParams(location.search);
-      searchParams.set("lng", lang);
+      const searchParams = new URLSearchParams();
+      searchParams.set("lng", lang); // Only set lng, no duplicates
       navigate(`${location.pathname}?${searchParams.toString()}`);
       setIsOpen(false);
     });

@@ -17,6 +17,10 @@ function Home() {
 
   const fetchProjects = () => {
     console.log("fetchProjects called:", { page, language: i18n.language, isInitialized: i18n.isInitialized });
+    if (!i18n.isInitialized) {
+      console.log("i18n not initialized, skipping fetch");
+      return;
+    }
     setIsLoading(true);
     const startIndex = page * projectsPerPage;
     const newProjects = projectsData.slice(startIndex, startIndex + projectsPerPage).map((proj) => ({
@@ -51,6 +55,16 @@ function Home() {
       fetchProjects();
     }
   }, [i18n.language, i18n.isInitialized]);
+
+  // Fallback to reload projects if empty after initialization
+  useEffect(() => {
+    if (i18n.isInitialized && !isLoading && projects.length === 0 && hasMore) {
+      console.log("Fallback: Reloading projects due to empty state");
+      setPage(0);
+      setHasMore(true);
+      fetchProjects();
+    }
+  }, [projects, isLoading, i18n.isInitialized]);
 
   const standards = [
     {
