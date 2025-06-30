@@ -5,7 +5,8 @@
     "projects": "Projects",
     "contact": "Contact",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "order": "Order Now"
   },
   "home": {
     "hero": "Navigate with Clarity and Confidence",
@@ -104,5 +105,24 @@
     "website": "Visit our main website",
     "phone": "Call us",
     "phoneNumber": "+98 998 226 1006"
+  },
+  "order": {
+    "title": "Place Your Order",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "projectType": "Project Type",
+    "selectProjectType": "Select a project type",
+    "details": "Additional Details",
+    "detailsPlaceholder": "e.g., Signage dimensions, materials, or specific requirements",
+    "submit": "Submit Order",
+    "success": "Thank you! Your order details have been sent via WhatsApp. We'll contact you soon.",
+    "submitAnother": "Submit Another Order",
+    "errors": {
+      "name": "Please enter your name",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number (e.g., +989982261006)",
+      "projectType": "Please select a project type"
+    }
   }
 }

@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import OrderForm from "./components/OrderForm";
 import { useTranslation } from "react-i18next";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/order" element={<OrderForm />} />
         </Routes>
       </main>
     </div>
