@@ -10,7 +10,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [expandedStandard, setExpandedStandard] = useState(null);
 
-  const projectsPerPage = 3;
+  const projectsPerPage = 8;
 
   useEffect(() => {
     console.log("Home useEffect triggered:", { language: i18n.language, isInitialized: i18n.isInitialized, projectsDataLength: projectsData.length });
