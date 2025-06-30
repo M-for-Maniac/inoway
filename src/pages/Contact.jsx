@@ -8,8 +8,32 @@ function Contact() {
       <h1 className="text-xl font-bold text-[#007BFF] mb-4">{t("contact.title")}</h1>
       <div className="card">
         <div className="card-content">
-          <h2 className="text-base font-semibold text-[#333333] mb-2">{t("contact.title")}</h2>
+          <h2 className="text-base font-semibold text-[#333333] mb-2">{t("contact.getInTouch")}</h2>
           <ul className="space-y-2">
+            <li>
+              <a
+                href="mailto:mehrbod.sarabi@inoway.co"
+                className="text-[#007BFF] hover:text-[#FFA500] text-sm flex items-center"
+                aria-label={t("contact.developerEmail")}
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2l-8 5-8-5h16zm-2 12H6V8l6 4.5L18 8v10z" />
+                </svg>
+                {t("contact.developerEmail")} (Mehrbod Sarabi - {t("contact.developerRole")})
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:amir.r.tehrani@inoway.co"
+                className="text-[#007BFF] hover:text-[#FFA500] text-sm flex items-center"
+                aria-label={t("contact.ceoEmail")}
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2l-8 5-8-5h16zm-2 12H6V8l6 4.5L18 8v10z" />
+                </svg>
+                {t("contact.ceoEmail")} (Amir R. Tehrani - {t("contact.ceoRole")})
+              </a>
+            </li>
             <li>
               <a
                 href="https://wa.me/+989982261006"

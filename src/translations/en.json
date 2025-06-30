@@ -19,31 +19,31 @@
       "imageAlt": "InoWay by Artino team designing accessible signage solutions"
     },
     "standards": {
-    "title": "Our Wayfinding Standards",
-    "internationalAirports": {
-      "standard": "International Standards",
-      "details": "We adhere to international standards to ensure safe, multilingual signage for global airports."
-    },
-    "localAirports": {
-      "standard": "Regional Standards",
-      "details": "Tailored navigation complies with regional standards for airports, focusing on efficiency."
-    },
-    "hospitals": {
-      "standard": "Universal Standards",
-      "details": "Our hospital signage follows universal standards to prioritize accessibility and patient comfort."
-    },
-    "universities": {
-      "standard": "Universal Design Principles",
-      "details": "Campus navigation aligns with universal design principles to support diverse student populations."
-    },
-    "subwayStations": {
-      "standard": "Global Transit Standards",
-      "details": "We implement global transit standards for clear, efficient signage in urban transit systems."
-    },
-    "malls": {
-      "standard": "Industry Standards",
-      "details": "Retail navigation follows industry standards to enhance shopper experiences."
-    }
+      "title": "Our Wayfinding Standards",
+      "internationalAirports": {
+        "standard": "International Standards",
+        "details": "We adhere to international standards to ensure safe, multilingual signage for global airports."
+      },
+      "localAirports": {
+        "standard": "Regional Standards",
+        "details": "Tailored navigation complies with regional standards for airports, focusing on efficiency."
+      },
+      "hospitals": {
+        "standard": "Universal Standards",
+        "details": "Our hospital signage follows universal standards to prioritize accessibility and patient comfort."
+      },
+      "universities": {
+        "standard": "Universal Design Principles",
+        "details": "Campus navigation aligns with universal design principles to support diverse student populations."
+      },
+      "subwayStations": {
+        "standard": "Global Transit Standards",
+        "details": "We implement global transit standards for clear, efficient signage in urban transit systems."
+      },
+      "malls": {
+        "standard": "Industry Standards",
+        "details": "Retail navigation follows industry standards to enhance shopper experiences."
+      }
     }
   },
   "services": {
@@ -95,6 +95,11 @@
   },
   "contact": {
     "title": "Contact Us",
+    "getInTouch": "Get in Touch",
+    "developerEmail": "Developer Email",
+    "developerRole": "Developer and Research Department",
+    "ceoEmail": "CEO Email",
+    "ceoRole": "Chief Executive Officer",
     "whatsapp": "Chat with us on WhatsApp",
     "website": "Visit our main website",
     "phone": "Call us",
