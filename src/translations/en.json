@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "hero": "Navigate with Clarity and Confidence",
+    "subhero": "Innovative wayfinding solutions designed for accessibility and seamless navigation in complex environments.",
+    "cta": "Get in Touch",
+    "featuredProjects": "Featured Projects",
+    "company": {
+      "title": "About InoWay by Artino",
+      "description": "InoWay, a division of Artino, is dedicated to creating intuitive wayfinding systems for airports, hospitals, universities, and beyond. With Artino’s 15 years of expertise in crafting high-quality signage using acrylic, metal, and other materials, InoWay delivers innovative navigation solutions rooted in universal design principles. Our work prioritizes accessibility, ensuring inclusive experiences for all, including people with disabilities, while adhering to universal standards for clarity, consistency, and user-centric design.",
+      "cta": "Learn More",
+      "imageAlt": "InoWay by Artino team designing accessible signage solutions"
+    },
+    "standards": {
+    "title": "Our Wayfinding Standards",
+    "internationalAirports": {
+      "standard": "International Standards",
+      "details": "We adhere to international standards to ensure safe, multilingual signage for global airports."
+    },
+    "localAirports": {
+      "standard": "Regional Standards",
+      "details": "Tailored navigation complies with regional standards for airports, focusing on efficiency."
+    },
+    "hospitals": {
+      "standard": "Universal Standards",
+      "details": "Our hospital signage follows universal standards to prioritize accessibility and patient comfort."
+    },
+    "universities": {
+      "standard": "Universal Design Principles",
+      "details": "Campus navigation aligns with universal design principles to support diverse student populations."
+    },
+    "subwayStations": {
+      "standard": "Global Transit Standards",
+      "details": "We implement global transit standards for clear, efficient signage in urban transit systems."
+    },
+    "malls": {
+      "standard": "Industry Standards",
+      "details": "Retail navigation follows industry standards to enhance shopper experiences."
+    }
+    }
+  },
+  "services": {
+    "title": "Our Wayfinding Services",
+    "userBehavior": {
+      "title": "Understand User Behavior",
+      "description": "We analyze how people move through spaces, observing traffic patterns, identifying bottlenecks, and addressing diverse user needs, including those with visual or mobility impairments."
+    },
+    "clarityConsistency": {
+      "title": "Design for Clarity and Consistency",
+      "description": "Our signage is readable, well-placed, and consistent in style, using colors, graphics, and architectural elements to create recognizable areas and simplify navigation."
+    },
+    "visualCues": {
+      "title": "Leverage Visual Cues and Landmarks",
+      "description": "We create memorable landmarks and clear directional cues, both verbal and visual, to guide users and highlight points of interest within the space."
+    },
+    "accessibility": {
+      "title": "Ensure Accessibility",
+      "description": "We design for all users, incorporating features for individuals with disabilities and exploring digital tools like apps and maps to enhance navigation."
+    },
+    "maintenance": {
+      "title": "Maintain and Update",
+      "description": "We regularly evaluate and update wayfinding systems to ensure effectiveness and consistency across locations, keeping navigation seamless."
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "readMore": "Read More",
+    "internationalAirports": "International Airports",
+    "internationalAirportsDesc": "Multilingual signage systems for seamless navigation in global airport hubs.",
+    "localAirports": "Local Airports",
+    "localAirportsDesc": "Tailored wayfinding solutions for efficient regional airport navigation.",
+    "hospitals": "Hospitals",
+    "hospitalsDesc": "Accessible signage and navigation for patients and visitors in healthcare facilities.",
+    "universities": "Universities",
+    "universitiesDesc": "Comprehensive campus wayfinding for students, faculty, and visitors.",
+    "subwayStations": "Subway Stations",
+    "subwayStationsDesc": "Clear and efficient signage for urban subway systems.",
+    "malls": "Malls",
+    "mallsDesc": "Intuitive navigation solutions for bustling retail environments.",
+    "parking": "Parkings",
+    "parkingDesc": "Parking signs communicate rules and information about parking areas, helping drivers understand parking regulations and conditions.",
+    "emergency": "Emergency",
+    "emergencyDesc": "Guide individuals to emergency facilities or indicate escape routes."
+  },
+  "modal": {
+    "close": "Close Modal",
+    "viewDetails": "View details for {{name}}"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "whatsapp": "Chat with us on WhatsApp",
+    "website": "Visit our main website",
+    "phone": "Call us",
+    "phoneNumber": "+98 998 226 1006"
+  }
+}

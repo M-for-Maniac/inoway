@@ -1,0 +1,90 @@
+[
+  {
+    "id": "international-airports",
+    "image": "/assets/images/InternationalAirport1.jpg",
+    "images": [
+      "/assets/images/InternationalAirport1.jpg",
+      "/assets/images/InternationalAirport2.jpg",
+      "/assets/images/InternationalAirport3.jpg"
+    ],
+    "titleKey": "projects.internationalAirports",
+    "descKey": "projects.internationalAirportsDesc"
+  },
+  {
+    "id": "local-airports",
+    "image": "/assets/images/Salam1.jpg",
+    "images": [
+      "/assets/images/Salam1.jpg",
+      "/assets/images/Salam2.jpg",
+      "/assets/images/Salam3.jpg"
+    ],
+    "titleKey": "projects.localAirports",
+    "descKey": "projects.localAirportsDesc"
+  },
+  {
+    "id": "hospitals",
+    "image": "/assets/images/Hospital1.jpg",
+    "images": [
+      "/assets/images/Hospital1.jpg",
+      "/assets/images/Hospital2.jpg",
+      "/assets/images/Hospital3.jpg"
+    ],
+    "titleKey": "projects.hospitals",
+    "descKey": "projects.hospitalsDesc"
+  },
+  {
+    "id": "universities",
+    "image": "/assets/images/Uni1.jpg",
+    "images": [
+      "/assets/images/Uni1.jpg",
+      "/assets/images/Uni2.jpg",
+      "/assets/images/Uni3.jpg"
+    ],
+    "titleKey": "projects.universities",
+    "descKey": "projects.universitiesDesc"
+  },
+  {
+    "id": "emergency",
+    "image": "/assets/images/Emergency1.jpg",
+    "images": [
+      "/assets/images/Emergency1.jpg",
+      "/assets/images/Emergency2.jpg",
+      "/assets/images/Emergency3.jpg"
+    ],
+    "titleKey": "projects.emergency",
+    "descKey": "projects.emergencyDesc"
+  },
+  {
+    "id": "malls",
+    "image": "/assets/images/Mall1.jpg",
+    "images": [
+      "/assets/images/Mall1.jpg",
+      "/assets/images/Mall2.jpg",
+      "/assets/images/Mall3.jpg"
+    ],
+    "titleKey": "projects.malls",
+    "descKey": "projects.mallsDesc"
+  },
+  {
+    "id": "parking",
+    "image": "/assets/images/Parking1.jpg",
+    "images": [
+      "/assets/images/Parking1.jpg",
+      "/assets/images/Parking2.jpg",
+      "/assets/images/Parking3.jpg"
+    ],
+    "titleKey": "projects.parking",
+    "descKey": "projects.parkingDesc"
+  },
+  {
+    "id": "subway-stations",
+    "image": "/assets/images/subway1.jpg",
+    "images": [
+      "/assets/images/subway1.jpg",
+      "/assets/images/subway2.jpg",
+      "/assets/images/subway3.jpg"
+    ],
+    "titleKey": "projects.subwayStations",
+    "descKey": "projects.subwayStationsDesc"
+  }
+]
