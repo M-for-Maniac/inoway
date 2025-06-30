@@ -9,7 +9,6 @@
     <meta name="author" content="Inoway" />
     <title>Inoway - Wayfinding Solutions</title>
     <link href="/styles/output.css" rel="stylesheet" />
-    <!-- Schema Markup for Organization and CEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,5 +26,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Handle direct access to routes -->
+    <script>
+      // Redirect hash-based URLs to clean URLs
+      if (window.location.hash) {
+        const path = window.location.hash.substring(1); // Remove #
+        window.history.replaceState(null, '', path);
+      }
+    </script>
   </body>
 </html>
