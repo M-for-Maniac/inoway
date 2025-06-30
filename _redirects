@@ -1,1 +1,1 @@
-/*    /index.html    200
+/*    /index.html    200!    # Force index.html for all routes, ignoring query parameters */
