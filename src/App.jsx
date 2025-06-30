@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import OrderForm from "./components/OrderForm";
+import OrderForm from "./pages/OrderForm";
 import { useTranslation } from "react-i18next";
 
 function App() {
