@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function debounce(func, wait) {
   let timeout;
@@ -17,8 +17,6 @@ function debounce(func, wait) {
 function Sidebar() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
@@ -26,22 +24,17 @@ function Sidebar() {
     localStorage.setItem("language", lang);
     i18n.changeLanguage(lang).then(() => {
       console.log("Language changed to:", lang);
-      const searchParams = new URLSearchParams();
-      searchParams.set("lng", lang);
-      navigate(`${location.pathname}?${searchParams.toString()}`, { replace: true });
       setIsOpen(false);
     });
   }, 300);
 
-  // Sync language from URL on initial load
   useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const lng = searchParams.get("lng") || localStorage.getItem("language") || "en";
+    const lng = localStorage.getItem("language") || "en";
     if (lng !== i18n.language) {
-      console.log("Syncing language from URL:", lng);
+      console.log("Syncing language from localStorage:", lng);
       i18n.changeLanguage(lng);
     }
-  }, [location.search, i18n]);
+  }, [i18n]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -75,7 +68,7 @@ function Sidebar() {
             ].map((item) => (
               <NavLink
                 key={item.to}
-                to={`${item.to}?lng=${i18n.language}`}
+                to={item.to}
                 className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                 onClick={() => setIsOpen(false)}
                 aria-current={({ isActive }) => (isActive ? "page" : undefined)}

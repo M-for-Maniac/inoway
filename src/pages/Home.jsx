@@ -1,65 +1,21 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../data/projects.json";
 
 function Home() {
   const { t, i18n } = useTranslation();
   const [projects, setProjects] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedStandard, setExpandedStandard] = useState(null);
 
   const projectsPerPage = 3;
 
-  const fetchProjects = () => {
-    console.log("fetchProjects called:", { page, language: i18n.language, isInitialized: i18n.isInitialized, projectsDataLength: projectsData.length });
-    if (!i18n.isInitialized) {
-      console.log("i18n not initialized, skipping fetch");
-      return;
-    }
-    setIsLoading(true);
-    const startIndex = page * projectsPerPage;
-    const newProjects = projectsData.slice(startIndex, startIndex + projectsPerPage).map((proj) => ({
-      id: proj.id,
-      title: t(proj.titleKey),
-      image: proj.image,
-      images: proj.images || [proj.image],
-      description: t(proj.descKey),
-    }));
-    console.log("New projects fetched:", newProjects);
-    setProjects((prev) => {
-      const updated = [...prev, ...newProjects];
-      console.log("Updated projects:", updated);
-      return updated;
-    });
-    setPage((p) => p + 1);
-    setIsLoading(false);
-    if (startIndex + newProjects.length >= projectsData.length) {
-      console.log("No more projects to fetch, total:", projectsData.length);
-      setHasMore(false);
-    }
-  };
-
   useEffect(() => {
-    console.log("Home useEffect triggered:", { language: i18n.language, isInitialized: i18n.isInitialized });
+    console.log("Home useEffect triggered:", { language: i18n.language, isInitialized: i18n.isInitialized, projectsDataLength: projectsData.length });
     if (i18n.isInitialized) {
-      setProjects([]);
-      setPage(0);
-      setHasMore(true);
       setIsLoading(true);
-      setExpandedStandard(null);
-      fetchProjects();
-    }
-  }, [i18n.language, i18n.isInitialized]);
-
-  // Fallback to load all projects if empty
-  useEffect(() => {
-    if (i18n.isInitialized && !isLoading && projects.length === 0 && hasMore) {
-      console.log("Fallback: Loading all projects due to empty state");
       const newProjects = projectsData.slice(0, projectsPerPage).map((proj) => ({
         id: proj.id,
         title: t(proj.titleKey),
@@ -67,11 +23,13 @@ function Home() {
         images: proj.images || [proj.image],
         description: t(proj.descKey),
       }));
+      console.log("Projects loaded:", newProjects);
       setProjects(newProjects);
-      setHasMore(false);
       setIsLoading(false);
+    } else {
+      console.log("i18n not initialized, waiting...");
     }
-  }, [projects, isLoading, i18n.isInitialized, t]);
+  }, [i18n.language, i18n.isInitialized, t]);
 
   const standards = [
     {
@@ -174,26 +132,16 @@ function Home() {
 
       <section className="projects-section">
         <h2 className="text-3xl font-semibold text-[#2D3748] text-center">{t("home.featuredProjects")}</h2>
-        {isLoading && projects.length === 0 ? (
+        {isLoading ? (
           <p className="text-center text-[#4A5568] text-sm">Loading projects...</p>
+        ) : projects.length === 0 ? (
+          <p className="text-center text-[#4A5568] text-sm">No projects available</p>
         ) : (
-          <InfiniteScroll
-            dataLength={projects.length}
-            next={fetchProjects}
-            hasMore={hasMore}
-            loader={<p className="text-center text-[#4A5568] text-sm mt-6">Loading...</p>}
-            key={i18n.language}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.length === 0 && !isLoading ? (
-                <p className="text-center text-[#4A5568] text-sm">No projects available</p>
-              ) : (
-                projects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
-                ))
-              )}
-            </div>
-          </InfiniteScroll>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
         )}
       </section>
     </div>
