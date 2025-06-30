@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/inoway/' : '/'}>
+  <BrowserRouter basename='/'>
     <App />
   </BrowserRouter>
 );

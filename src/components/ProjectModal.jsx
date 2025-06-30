@@ -6,11 +6,7 @@ Modal.setAppElement("#root");
 
 function ProjectModal({ isOpen, onClose, project }) {
   const { t, i18n } = useTranslation();
-  // Prepend /inoway/ in production, use original path in development
-  const mainImagePath = process.env.NODE_ENV === 'production'
-    ? `/inoway${project?.image || "/assets/images/placeholder.jpg"}`
-    : project?.image || "/assets/images/placeholder.jpg";
-  const [mainImage, setMainImage] = useState(mainImagePath);
+  const [mainImage, setMainImage] = useState(project?.image || "/assets/images/placeholder.jpg");
 
   if (!project) return null;
 
@@ -30,25 +26,22 @@ function ProjectModal({ isOpen, onClose, project }) {
           src={mainImage}
           alt={project.title}
           loading="lazy"
-          onError={(e) => (e.target.src = process.env.NODE_ENV === 'production' ? '/inoway/assets/images/placeholder.jpg' : '/assets/images/placeholder.jpg')}
+          onError={(e) => (e.target.src = '/assets/images/placeholder.jpg')}
         />
         {project.images && (
           <div className="flex flex-wrap gap-2 justify-center mt-2">
-            {project.images.map((image, index) => {
-              const thumbnailPath = process.env.NODE_ENV === 'production' ? `/inoway${image}` : image;
-              return (
-                <img
-                  key={index}
-                  src={thumbnailPath}
-                  alt={`${project.title} thumbnail ${index + 1}`}
-                  className="modal-thumbnail border-2 border-transparent hover:border-[#FFA500] data-[active=true]:border-[#007BFF]"
-                  data-active={mainImage === thumbnailPath}
-                  onClick={() => setMainImage(thumbnailPath)}
-                  loading="lazy"
-                  onError={(e) => (e.target.src = process.env.NODE_ENV === 'production' ? '/inoway/assets/images/placeholder.jpg' : '/assets/images/placeholder.jpg')}
-                />
-              );
-            })}
+            {project.images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`${project.title} thumbnail ${index + 1}`}
+                className="modal-thumbnail border-2 border-transparent hover:border-[#FFA500] data-[active=true]:border-[#007BFF]"
+                data-active={mainImage === image}
+                onClick={() => setMainImage(image)}
+                loading="lazy"
+                onError={(e) => (e.target.src = '/assets/images/placeholder.jpg')}
+              />
+            ))}
           </div>
         )}
         <p id="modal-description" className="text-[#4A5568]">{project.description}</p>

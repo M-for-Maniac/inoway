@@ -41,34 +41,31 @@ function Services() {
         {t("services.title")}
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service) => {
-          const iconPath = process.env.NODE_ENV === 'production' ? `/inoway${service.icon}` : service.icon;
-          return (
-            <div
-              key={service.id}
-              className="service-card bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in-up"
-              role="article"
-              aria-labelledby={`service-title-${service.id}`}
-            >
-              <img
-                src={iconPath}
-                alt={`${service.title} icon`}
-                className="service-icon mx-auto mb-4"
-                loading="lazy"
-                onError={(e) => (e.target.src = process.env.NODE_ENV === 'production' ? '/inoway/assets/images/placeholder.jpg' : '/assets/images/placeholder.jpg')}
-              />
-              <div className="card-content">
-                <h2
-                  id={`service-title-${service.id}`}
-                  className="text-xl font-semibold text-[#2D3748] mb-2"
-                >
-                  {service.title}
-                </h2>
-                <p className="text-[#4A5568] text-sm">{service.description}</p>
-              </div>
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className="service-card bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in-up"
+            role="article"
+            aria-labelledby={`service-title-${service.id}`}
+          >
+            <img
+              src={service.icon}
+              alt={`${service.title} icon`}
+              className="service-icon mx-auto mb-4"
+              loading="lazy"
+              onError={(e) => (e.target.src = '/assets/images/placeholder.jpg')}
+            />
+            <div className="card-content">
+              <h2
+                id={`service-title-${service.id}`}
+                className="text-xl font-semibold text-[#2D3748] mb-2"
+              >
+                {service.title}
+              </h2>
+              <p className="text-[#4A5568] text-sm">{service.description}</p>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

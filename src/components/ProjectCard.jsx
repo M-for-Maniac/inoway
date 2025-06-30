@@ -6,11 +6,6 @@ function ProjectCard({ project }) {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Prepend /inoway/ in production, use original path in development
-  const imagePath = process.env.NODE_ENV === 'production'
-    ? `/inoway${project.image}`
-    : project.image || '/assets/images/placeholder.jpg';
-
   return (
     <>
       <div
@@ -19,7 +14,7 @@ function ProjectCard({ project }) {
         aria-label={t("modal.viewDetails", { name: project.title })}
       >
         <img
-          src={imagePath}
+          src={project.image || '/assets/images/placeholder.jpg'}
           alt={project.title}
           loading="lazy"
           onError={(e) => (e.target.src = '/assets/images/placeholder.jpg')}

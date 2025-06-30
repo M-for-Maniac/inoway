@@ -90,11 +90,8 @@ function Home() {
     setExpandedStandard(expandedStandard === id ? null : id);
   };
 
-  const heroImagePath = process.env.NODE_ENV === 'production' ? '/inoway/assets/images/hero.jpg' : '/assets/images/hero.jpg';
-
   return (
     <div className="max-w-7xl mx-auto w-full space-y-12 px-4 sm:px-6 lg:px-8">
-      {/* Hero/Company Intro Section */}
       <section className="hero-company bg-white rounded-2xl shadow-lg relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#007BFF] to-[#4A90E2] opacity-40"></div>
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 p-8 sm:p-12">
@@ -113,16 +110,15 @@ function Home() {
           </div>
           <div className="md:w-1/2 animate-fade-in-up">
             <img
-              src={heroImagePath}
+              src="/assets/images/hero.jpg"
               alt={t("home.company.imageAlt")}
               className="rounded-lg object-cover w-full h-64"
-              onError={(e) => (e.target.src = process.env.NODE_ENV === 'production' ? '/inoway/assets/images/placeholder.jpg' : '/assets/images/placeholder.jpg')}
+              onError={(e) => (e.target.src = '/assets/images/placeholder.jpg')}
             />
           </div>
         </div>
       </section>
 
-      {/* Standards Overview Section */}
       <section className="standards-overview">
         <h2 className="text-3xl font-semibold text-[#2D3748] text-center">{t("home.standards.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,7 +142,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
       <section className="projects-section">
         <h2 className="text-3xl font-semibold text-[#2D3748] text-center">{t("home.featuredProjects")}</h2>
         {isLoading ? (
