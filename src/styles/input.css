@@ -434,3 +434,135 @@ h1, h2 {
     padding: 1.5rem;
   }
 }
+
+
+/* Form Styles */
+.form-container {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #2D3748;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+[dir="rtl"] .form-label {
+  text-align: right;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  color: #1F2937;
+  background-color: #F9FAFB;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover {
+  background-color: #F1F5F9;
+  border-color: #A5B4FC;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 0 3px rgba(3, 85, 216, 0.2);
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+.form-error {
+  color: #EF4444;
+  font-size: 0.8125rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+[dir="rtl"] .form-error {
+  text-align: right;
+}
+
+.form-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #007BFF;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #FFA500;
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.form-button:focus {
+  box-shadow: 0 0 0 3px rgba(3, 85, 216, 0.2);
+  outline: none;
+}
+
+.form-success {
+  background: #F0FDF4;
+  border: 1px solid #DCFCE7;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  color: #2D3748;
+}
+
+@media (max-width: 767px) {
+  .form-success {
+    padding: 1.25rem;
+  }
+}
+
+.form-success p {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-success a {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-success a:hover {
+  background-color: #FFA500;
+  transform: scale(1.03);
+}

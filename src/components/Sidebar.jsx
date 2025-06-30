@@ -65,6 +65,7 @@ function Sidebar() {
               { to: "/services", label: t("services.title") },
               { to: "/projects", label: t("projects.title") },
               { to: "/contact", label: t("contact.title") },
+              { to: "/order", label: t("nav.order") },
             ].map((item) => (
               <NavLink
                 key={item.to}

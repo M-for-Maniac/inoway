@@ -37,7 +37,6 @@ function OrderForm() {
       return;
     }
 
-    // Format WhatsApp message
     const message = `
       New Order from Inoway:
       Name: ${formData.name}
@@ -47,32 +46,31 @@ function OrderForm() {
       Details: ${formData.details || "None"}
     `.trim();
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/+989982261006?text=${encodedMessage}`; // Your testing number
+    const whatsappUrl = `https://wa.me/+989982261006?text=${encodedMessage}`;
 
-    // Open WhatsApp
     window.open(whatsappUrl, "_blank");
     setSubmitted(true);
     setFormData({ name: "", email: "", phone: "", projectType: "", details: "" });
   };
 
   return (
-    <div className="max-w-5xl mx-auto w-full py-8 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-xl font-bold text-[#007BFF] mb-4">{t("order.title")}</h1>
+    <div className="max-w-2xl mx-auto w-full py-10 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-3xl font-bold text-[#007BFF] mb-8 animate-fade-in">{t("order.title")}</h1>
       {submitted ? (
-        <div className="text-center">
-          <p className="text-[#4A5568] mb-4">{t("order.success")}</p>
+        <div className="form-success animate-fade-in-up">
+          <p>{t("order.success")}</p>
           <Link
             to="/order"
-            className="inline-block bg-[#007BFF] text-white rounded-full px-6 py-2 text-sm font-semibold hover:bg-[#FFA500] transition-all duration-300"
+            className="form-success-link"
             onClick={() => setSubmitted(false)}
           >
             {t("order.submitAnother")}
           </Link>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-xl shadow-md">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-[#2D3748]">
+        <form onSubmit={handleSubmit} className="form-container">
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">
               {t("order.name")}
             </label>
             <input
@@ -81,13 +79,13 @@ function OrderForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-[#007BFF] focus:ring-[#007BFF]"
+              className="form-input"
               aria-required="true"
             />
-            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+            {errors.name && <p className="form-error">{errors.name}</p>}
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[#2D3748]">
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">
               {t("order.email")}
             </label>
             <input
@@ -96,13 +94,13 @@ function OrderForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-[#007BFF] focus:ring-[#007BFF]"
+              className="form-input"
               aria-required="true"
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+            {errors.email && <p className="form-error">{errors.email}</p>}
           </div>
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-[#2D3748]">
+          <div className="form-group">
+            <label htmlFor="phone" className="form-label">
               {t("order.phone")}
             </label>
             <input
@@ -111,14 +109,14 @@ function OrderForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-[#007BFF] focus:ring-[#007BFF]"
+              className="form-input"
               placeholder="+989982261006"
               aria-required="true"
             />
-            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+            {errors.phone && <p className="form-error">{errors.phone}</p>}
           </div>
-          <div>
-            <label htmlFor="projectType" className="block text-sm font-medium text-[#2D3748]">
+          <div className="form-group">
+            <label htmlFor="projectType" className="form-label">
               {t("order.projectType")}
             </label>
             <select
@@ -126,7 +124,7 @@ function OrderForm() {
               name="projectType"
               value={formData.projectType}
               onChange={handleChange}
-              className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-[#007BFF] focus:ring-[#007BFF]"
+              className="form-select"
               aria-required="true"
             >
               <option value="">{t("order.selectProjectType")}</option>
@@ -139,10 +137,10 @@ function OrderForm() {
               <option value="parking">{t("projects.parking")}</option>
               <option value="emergency">{t("projects.emergency")}</option>
             </select>
-            {errors.projectType && <p className="text-red-500 text-xs mt-1">{errors.projectType}</p>}
+            {errors.projectType && <p className="form-error">{errors.projectType}</p>}
           </div>
-          <div>
-            <label htmlFor="details" className="block text-sm font-medium text-[#2D3748]">
+          <div className="form-group">
+            <label htmlFor="details" className="form-label">
               {t("order.details")}
             </label>
             <textarea
@@ -150,14 +148,14 @@ function OrderForm() {
               name="details"
               value={formData.details}
               onChange={handleChange}
-              rows="4"
-              className="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-[#007BFF] focus:ring-[#007BFF]"
+              rows="6"
+              className="form-textarea"
               placeholder={t("order.detailsPlaceholder")}
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-[#007BFF] text-white rounded-full px-6 py-3 text-sm font-semibold hover:bg-[#FFA500] transition-all duration-300"
+            className="form-button"
             aria-label={t("order.submit")}
           >
             {t("order.submit")}
