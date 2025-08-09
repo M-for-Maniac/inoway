@@ -54,7 +54,7 @@ function OrderForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto w-full py-10 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto w-full py-10 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-[#007BFF] mb-8 animate-fade-in">{t("order.title")}</h1>
       {submitted ? (
         <div className="form-success animate-fade-in-up">

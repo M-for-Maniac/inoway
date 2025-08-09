@@ -58,7 +58,7 @@ function Sidebar() {
       </button>
       <div className={`sidebar ${isOpen ? "open" : ""}`} role="navigation" aria-label="Main navigation">
         <div>
-          <h1 className="text-[#007BFF]">InoWay by Artino</h1>
+          <img className="logo" src="./assets/images/Inoway.png" alt="Inoway by Artino" />
           <nav className="space-y-1">
             {[
               { to: "/", label: t("nav.home") },

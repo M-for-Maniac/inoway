@@ -49,25 +49,74 @@
   },
   "services": {
     "title": "Our Wayfinding Services",
+    "viewImage": "View image {{index}}",
     "userBehavior": {
       "title": "Understand User Behavior",
-      "description": "We analyze how people move through spaces, observing traffic patterns, identifying bottlenecks, and addressing diverse user needs, including those with visual or mobility impairments."
+      "description": "We analyze how people move through spaces, observing traffic patterns, identifying bottlenecks, and addressing diverse user needs, including those with visual or mobility impairments.",
+      "sectionTitle": "User Behavior Analysis with 360 Virtual Tours",
+      "sectionDescription": "Our 360 camera captures detailed virtual tours to study user movement and optimize navigation in complex environments like airports and hospitals.",
+      "video1Alt": "360 virtual tour of airport navigation",
+      "video1Caption": "Analyzing passenger flow in an international airport.",
+      "video2Alt": "360 virtual tour of hospital wayfinding",
+      "video2Caption": "Studying patient and visitor movement in a hospital.",
+      "videoFallback": "Your browser does not support video playback.",
+      "playVideo": "Play video {{index}}"
     },
     "clarityConsistency": {
       "title": "Design for Clarity and Consistency",
-      "description": "Our signage is readable, well-placed, and consistent in style, using colors, graphics, and architectural elements to create recognizable areas and simplify navigation."
+      "description": "Our signage is readable, well-placed, and consistent in style, using colors, graphics, and architectural elements to create recognizable areas and simplify navigation.",
+      "sectionTitle": "Designing Clear and Consistent Signage",
+      "sectionDescription": "We create signage with architectural plans to ensure clarity and consistency across public spaces, enhancing user experience.",
+      "image1Alt": "Architectural plan for airport signage",
+      "image1Caption": "Signage layout for an international airport.",
+      "image2Alt": "Signage design mockup",
+      "image2Caption": "Consistent signage design for a mall.",
+      "image3Alt": "Hospital signage plan",
+      "image3Caption": "Navigation plan for a hospital.",
+      "modalTitle": "Clarity and Consistency Gallery",
+      "modalAlt": "Enlarged view of signage design"
     },
     "visualCues": {
       "title": "Leverage Visual Cues and Landmarks",
-      "description": "We create memorable landmarks and clear directional cues, both verbal and visual, to guide users and highlight points of interest within the space."
+      "description": "We create memorable landmarks and clear directional cues, both verbal and visual, to guide users and highlight points of interest within the space.",
+      "sectionTitle": "Visual Cues and Landmarks",
+      "sectionDescription": "Our signage totems and landmarks provide intuitive navigation cues for users in complex environments.",
+      "image1Alt": "Signage totem in airport",
+      "image1Caption": "Interactive totem in an airport terminal.",
+      "image2Alt": "Landmark signage in mall",
+      "image2Caption": "Prominent landmark in a shopping mall.",
+      "image3Alt": "Directional signage in hospital",
+      "image3Caption": "Clear directional cues in a hospital.",
+      "modalTitle": "Visual Cues and Landmarks Gallery",
+      "modalAlt": "Enlarged view of visual cue or landmark"
     },
     "accessibility": {
       "title": "Ensure Accessibility",
-      "description": "We design for all users, incorporating features for individuals with disabilities and exploring digital tools like apps and maps to enhance navigation."
+      "description": "We design for all users, incorporating features for individuals with disabilities and exploring digital tools like apps and maps to enhance navigation.",
+      "sectionTitle": "Accessible Navigation Solutions",
+      "sectionDescription": "Our navigation app and signage designs prioritize accessibility for aged adults and individuals with disabilities.",
+      "featuresTitle": "App Features for Accessibility",
+      "feature1": "Voice-guided navigation for visually impaired users.",
+      "feature2": "High-contrast, large-font displays for aged adults.",
+      "feature3": "Multilingual support for diverse users.",
+      "image1Alt": "Navigation app interface",
+      "image1Caption": "App interface for accessible navigation.",
+      "image2Alt": "Accessible signage design",
+      "image2Caption": "Signage with braille and high-contrast text.",
+      "modalTitle": "Accessibility Features Gallery",
+      "modalAlt": "Enlarged view of accessibility feature"
     },
     "maintenance": {
       "title": "Maintain and Update",
-      "description": "We regularly evaluate and update wayfinding systems to ensure effectiveness and consistency across locations, keeping navigation seamless."
+      "description": "We regularly evaluate and update wayfinding systems to ensure effectiveness and consistency across locations, keeping navigation seamless.",
+      "sectionTitle": "Maintenance and Updates",
+      "sectionDescription": "Our maintenance services ensure signage remains functional and up-to-date in dynamic environments.",
+      "image1Alt": "Signage maintenance work",
+      "image1Caption": "Technician updating airport signage.",
+      "image2Alt": "Signage inspection",
+      "image2Caption": "Routine inspection of mall signage.",
+      "modalTitle": "Maintenance Services Gallery",
+      "modalAlt": "Enlarged view of maintenance service"
     }
   },
   "projects": {
