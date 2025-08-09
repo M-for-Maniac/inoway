@@ -53,9 +53,9 @@ function Services() {
   ];
 
   const clarityImages = [
-    { src: "/assets/images/plan1.jpg", altKey: "services.clarityConsistency.image1Alt", captionKey: "services.clarityConsistency.image1Caption" },
-    { src: "/assets/images/plan2.jpg", altKey: "services.clarityConsistency.image2Alt", captionKey: "services.clarityConsistency.image2Caption" },
-    { src: "/assets/images/plan3.JPG", altKey: "services.clarityConsistency.image3Alt", captionKey: "services.clarityConsistency.image3Caption" },
+    { src: "/assets/images/plan1.jpeg", altKey: "services.clarityConsistency.image1Alt", captionKey: "services.clarityConsistency.image1Caption" },
+    { src: "/assets/images/plan2.jpeg", altKey: "services.clarityConsistency.image2Alt", captionKey: "services.clarityConsistency.image2Caption" },
+    { src: "/assets/images/plan3.jpeg", altKey: "services.clarityConsistency.image3Alt", captionKey: "services.clarityConsistency.image3Caption" },
   ];
 
   const visualCuesImages = [
