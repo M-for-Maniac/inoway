@@ -130,7 +130,7 @@ function Services() {
           {userBehaviorVideos.map((video, index) => (
             <div
               key={`video-${index}`}
-              className="video-item bg-white rounded-xl shadow-md overflow-hidden relative"
+              className="video-item bg-white rounded-xl shadow-md overflow-hidden"
               role="figure"
               aria-labelledby={`video-caption-${index}`}
             >
@@ -139,8 +139,6 @@ function Services() {
                 controls
                 preload="metadata"
                 poster={video.poster}
-                onPlay={(e) => e.target.nextSibling.classList.add("hidden")} // Hide play button on play
-                onPause={(e) => e.target.nextSibling.classList.remove("hidden")} // Show play button on pause
               >
                 <source src={video.src} type={video.src.endsWith(".webm") ? "video/webm" : "video/mp4"} />
                 <source
@@ -149,20 +147,6 @@ function Services() {
                 />
                 {t("services.userBehavior.videoFallback")}
               </video>
-              <button
-                className="video-play-button absolute inset-0 m-auto w-16 h-16 bg-[#007BFF] bg-opacity-75 rounded-full flex items-center justify-center hover:bg-[#FFA500] transition-colors duration-300"
-                onClick={(e) => e.target.previousSibling.play()}
-                aria-label={t("services.userBehavior.playVideo", { index: index + 1 })}
-              >
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </button>
               <div className="p-4">
                 <p id={`video-caption-${index}`} className="text-sm text-[#4A5568]">
                   {t(video.captionKey)}

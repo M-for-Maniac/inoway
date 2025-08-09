@@ -198,9 +198,6 @@
   .z-10 {
     z-index: 10;
   }
-  .m-auto {
-    margin: auto;
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -240,20 +237,11 @@
   .grid {
     display: grid;
   }
-  .hidden {
-    display: none;
-  }
   .inline-block {
     display: inline-block;
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
-  }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
-  .h-16 {
-    height: calc(var(--spacing) * 16);
   }
   .h-32 {
     height: calc(var(--spacing) * 32);
@@ -275,12 +263,6 @@
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
-  }
-  .w-8 {
-    width: calc(var(--spacing) * 8);
-  }
-  .w-16 {
-    width: calc(var(--spacing) * 16);
   }
   .w-full {
     width: 100%;
@@ -1256,34 +1238,6 @@ h1, h2 {
 [dir="rtl"] .feature-icon {
   margin-right: 0;
   margin-left: 0.5rem;
-}
-.video-play-button {
-  transition: all 0.3s ease;
-  margin: auto;
-}
-.video-play-button:hover {
-  transform: scale(1.1);
-}
-.video-play-button:focus {
-  outline: 2px solid #007BFF;
-  outline-offset: 2px;
-}
-.video-play-button.hidden {
-  display: none;
-}
-[dir="rtl"] .video-play-button {
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (max-width: 640px) {
-  .video-play-button {
-    width: 12vw;
-    height: 12vw;
-  }
-  .video-play-button svg {
-    width: 6vw;
-    height: 6vw;
-  }
 }
 .iso-images {
   display: flex;

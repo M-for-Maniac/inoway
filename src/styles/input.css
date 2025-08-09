@@ -702,44 +702,6 @@ h1, h2 {
   margin-left: 0.5rem;
 }
 
-/* Custom play button styles */
-.video-play-button {
-  transition: all 0.3s ease;
-  margin: auto;
-}
-
-.video-play-button:hover {
-  transform: scale(1.1);
-}
-
-.video-play-button:focus {
-  outline: 2px solid #007BFF;
-  outline-offset: 2px;
-}
-
-/* Hide play button when video is playing */
-.video-play-button.hidden {
-  display: none;
-}
-
-/* RTL adjustments */
-[dir="rtl"] .video-play-button {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .video-play-button {
-    width: 12vw; /* Scales with viewport width */
-    height: 12vw;
-  }
-  .video-play-button svg {
-    width: 6vw;
-    height: 6vw;
-  }
-}
-
 .iso-images{
   display: flex;
   width: 100%;
