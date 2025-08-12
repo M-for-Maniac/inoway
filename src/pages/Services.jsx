@@ -60,8 +60,8 @@ function Services() {
 
   const visualCuesImages = [
     { src: "/assets/images/totem1.jpeg", altKey: "services.visualCues.image1Alt", captionKey: "services.visualCues.image1Caption" },
-    { src: "/assets/images/totem1.jpeg", altKey: "services.visualCues.image2Alt", captionKey: "services.visualCues.image2Caption" },
-    { src: "/assets/images/totem1.jpeg", altKey: "services.visualCues.image3Alt", captionKey: "services.visualCues.image3Caption" },
+    { src: "/assets/images/totem2.jpeg", altKey: "services.visualCues.image2Alt", captionKey: "services.visualCues.image2Caption" },
+    { src: "/assets/images/totem3.jpeg", altKey: "services.visualCues.image3Alt", captionKey: "services.visualCues.image3Caption" },
   ];
 
   const accessibilityImages = [

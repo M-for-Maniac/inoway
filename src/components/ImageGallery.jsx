@@ -16,7 +16,7 @@ function ImageGallery({ images, modalTitleKey, modalAltKey }) {
             key={index}
             src={image.src}
             alt={t(image.altKey)}
-            className="w-full h-32 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-[#FFA500]"
+            className="w-full h-full object-cover rounded-lg cursor-pointer hover:border-2 hover:border-[#FFA500]"
             onClick={() => setModalImage(image)}
             loading="lazy"
             role="button"
